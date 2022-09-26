@@ -1,5 +1,20 @@
+from turtle import Turtle
+
 FONT = ("Courier", 24, "normal")
 
 
-class Scoreboard:
-    pass
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.level = 0
+        self.penup()
+        self.hideturtle()
+        self.setposition(x=-280, y=260)
+        self.color("black")
+        self.next_level()
+
+    def next_level(self):
+        self.clear()
+        self.level += 1
+        self.write(arg=f"Level: {self.level}", align="left", font=FONT)
+
