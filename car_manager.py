@@ -16,3 +16,7 @@ class CarManager(Turtle):
         self.penup()
         starting_position = (300, randint(-280, FINISH_LINE_Y))
         self.setposition(starting_position)
+
+    def move(self):
+        new_x = self.xcor() - STARTING_MOVE_DISTANCE
+        self.goto(x=new_x, y=self.ycor())
