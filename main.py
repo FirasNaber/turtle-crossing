@@ -20,3 +20,10 @@ while game_is_on:
     screen.update()
     if player.ycor() > FINISH_LINE_Y:
         scoreboard.next_level()
+
+    for c in car.cars:
+        if c.distance(player) < 20:
+            game_is_on = False
+            scoreboard.game_over()
+
+screen.exitonclick()
